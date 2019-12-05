@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:body>
+	<h:form>
+		<h:dataTable value="#{ativoBean.ativos}" var="ativo" border="1">
+			<h:column>
+				<f:facet name="header">
+					Nome Ativo
+				</f:facet>
+				#{ativo.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Tipo
+				</f:facet>
+				#{ativo.tipo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Perfil Investidor
+				</f:facet>
+				#{ativo.perfilInvestidor}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Capital Mínimo Inicial
+				</f:facet>
+				#{ativo.capitalMinimoInicial}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Saque Mínimo
+				</f:facet>
+				#{ativo.saqueMinimo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:commandLink action="#{ativoBean.exclui(ativo)}">
+					Excluir
+				</h:commandLink>
+			</h:column>
+		</h:dataTable>	
+	</h:form>
+</h:body>
+</html>

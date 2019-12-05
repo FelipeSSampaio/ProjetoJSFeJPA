@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			Nome ativo: <h:inputText value="#{ativoBean.ativo.nome}" autocomplete="off"/>
+			Tipo: <h:inputText value="#{ativoBean.ativo.tipo}" autocomplete="off"/>
+			Perfil investidor: <h:inputText value="#{ativoBean.ativo.perfilInvestidor}" autocomplete="off"/>
+			Capital Mínimo Inicial: <h:inputText value="#{ativoBean.ativo.capitalMinimoInicial}" autocomplete="off"/>
+			Saque Mínimo: <h:inputText value="#{ativoBean.ativo.saqueMinimo}" autocomplete="off"/>
+		
+			<h:commandButton value="Salvar" action="#{ativoBean.salva(ativoBean.ativo)}"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
