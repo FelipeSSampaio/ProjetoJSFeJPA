@@ -32,8 +32,8 @@ public class JDBCAtivoDAO implements AtivoDAO{
 	
 	public void salva(Ativo ativo) {
 		StringBuffer querie = new StringBuffer();
-		querie.append("Insert into Ativo (nome, tipo, perfilInvestidor, capitalMinimoInicial, saqueMinimo) ");
-		querie.append("values (?, ?, ?, ?, ?)");
+		querie.append("Insert into Ativo (id, nome_ativo, tipo, perfilInvestidor, capitalMinimoInicial, saqueMinimo) ");
+		querie.append("values (nextval('hibernate_sequence'), ?, ?, ?, ?, ?)");
 		
 		Connection conn = abreConexao();
 		
@@ -77,7 +77,7 @@ public class JDBCAtivoDAO implements AtivoDAO{
 				Ativo ativo = new Ativo();
 				
 				ativo.setId(rs.getLong("id"));
-				ativo.setNome(rs.getString("nome"));
+				ativo.setNome(rs.getString("nome_ativo"));
 				ativo.setTipo(rs.getString("tipo")); 
 				ativo.setPerfilInvestidor(rs.getString("perfilInvestidor")); 
 				ativo.setCapitalMinimoInicial(rs.getDouble("capitalMinimoInicial")); 

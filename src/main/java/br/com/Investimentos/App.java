@@ -29,6 +29,7 @@ public class App
     	ativo2.setTipo("Renda Variavel");
     	
     	//Salvando os ativos no banco
+    	//Rode primeiro com o hibernate para que a sequence seja criada e nao de erro no JDBC
         HibernateAtivoDAO had = new HibernateAtivoDAO();
         //JDBCAtivoDAO had = new JDBCAtivoDAO();
         had.salva(ativo1);
@@ -41,7 +42,7 @@ public class App
 			if(ativo.getNome().equalsIgnoreCase(ativo1.getNome()))
 				ativo1.setId(ativo.getId());
 		}
-        
+                
         //Apresentando o ID do ativo a ser removido
         System.out.println("ID ativo1: " + ativo1.getId());
         
