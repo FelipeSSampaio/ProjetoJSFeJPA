@@ -27,7 +27,9 @@ A construção do banco está definida em 'hibernate.hbm2ddl.auto' com update, o
 
 3 - Página inicial da aplicação
 
-http://localhost:8080/Investimentos/cadastraAtivo.xhtml
+http://localhost:8080/Investimentos/
+
+Será apresentada a tela inicial definida no web.xml, no caso defini o index.xhtml.
 
 ----------------------
 POSSÍVEIS PROBLEMAS
