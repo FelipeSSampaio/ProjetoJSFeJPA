@@ -2,49 +2,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:body>
-	<h:form>
-		<h:dataTable value="#{ativoBean.ativos}" var="ativo" border="1">
-			<h:column>
-				<f:facet name="header">
-					Nome Ativo
-				</f:facet>
-				#{ativo.nome}
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					Tipo
-				</f:facet>
-				#{ativo.tipo}
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					Perfil Investidor
-				</f:facet>
-				#{ativo.perfilInvestidor}
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					Capital Mínimo Inicial
-				</f:facet>
-				#{ativo.capitalMinimoInicial}
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					Saque Mínimo
-				</f:facet>
-				#{ativo.saqueMinimo}
-			</h:column>
-			<h:column>
-				<f:facet name="header">Ações</f:facet>
-				<h:commandLink action="#{ativoBean.exclui(ativo)}">
-					Excluir
-				</h:commandLink>
-			</h:column>
-		</h:dataTable>	
-	</h:form>
-</h:body>
+	
+	<h:head>
+		<h:outputStylesheet library="webjars" name="bootstrap/4.4.1/css/bootstrap.min-jsf.css" />
+	</h:head>
+	
+<h:body class="bg-light">
 
-<h:commandButton value="Voltar" onclick="history.back()"/>
+	<div class="container mt-5">
+		<h:form>
+			<blockquote class="blockquote mb-0">
+			  <h4 class="p-3 mb-2 bg-primary text-white">Lista de ativos</h4>
+			</blockquote>
+			
+			<div class="bg-white p-5">
+				<h:dataTable value="#{ativoBean.ativos}" var="ativo" class="table">
+					<h:column>
+						<f:facet name="header">
+							Nome Ativo
+						</f:facet>
+						#{ativo.nome}
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Tipo
+						</f:facet>
+						#{ativo.tipo}
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Perfil Investidor
+						</f:facet>
+						#{ativo.perfilInvestidor}
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Capital Mínimo Inicial
+						</f:facet>
+						#{ativo.capitalMinimoInicial}
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							Saque Mínimo
+						</f:facet>
+						#{ativo.saqueMinimo}
+					</h:column>
+					<h:column class="p-2">
+						<f:facet name="header">Ações</f:facet>
+						<h:commandLink action="#{ativoBean.exclui(ativo)}" styleClass="btn btn-danger">
+							Excluir
+						</h:commandLink>
+					</h:column>
+				</h:dataTable>
+			</div>	
+		</h:form>
+		<h:button value="Voltar" outcome="index" styleClass="btn btn-secondary mt-5 pl-5 pr-5 float-right"/>
+	</div>
+	
+</h:body>
 
 </html>

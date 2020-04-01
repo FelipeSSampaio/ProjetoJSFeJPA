@@ -1,20 +1,51 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html">
-<h:body>
-	<h:form>
-		<h:panelGrid columns="2">
-			Nome ativo: <h:inputText value="#{ativoBean.ativo.nome}" autocomplete="off"/>
-			Tipo: <h:inputText value="#{ativoBean.ativo.tipo}" autocomplete="off"/>
-			Perfil investidor: <h:inputText value="#{ativoBean.ativo.perfilInvestidor}" autocomplete="off"/>
-			Capital Mínimo Inicial: <h:inputText value="#{ativoBean.ativo.capitalMinimoInicial}" autocomplete="off"/>
-			Saque Mínimo: <h:inputText value="#{ativoBean.ativo.saqueMinimo}" autocomplete="off"/>
-		
-			<h:commandButton value="Salvar" action="#{ativoBean.salva(ativoBean.ativo)}"/>
-		</h:panelGrid>
-	</h:form>
-</h:body>
+	<h:head>
+		<h:outputStylesheet library="webjars" name="bootstrap/4.4.1/css/bootstrap.min-jsf.css" />
+	</h:head>
+	
+<h:body class="bg-light">
 
-<h:commandButton value="Voltar" onclick="history.back()"/>
+	<div class="container mt-5">
+		<blockquote class="blockquote mb-0">
+		  <h4 class="p-3 mb-2 bg-primary text-white">Cadastro de ativos</h4>
+		</blockquote>
+		
+		<h:form class="bg-white p-4">
+			<div class="md-form mt-3 mb-3">
+				<h6>Nome:</h6>
+				<h:inputText  id="NomeAtivo" value="#{ativoBean.ativo.nome}" autocomplete="off" class="form-control form-control-sm"/>
+            </div>
+            
+            <div class="md-form mt-3 mb-3">
+				<h6>Tipo:</h6>
+				<h:inputText  id="TipoAtivo" value="#{ativoBean.ativo.tipo}" autocomplete="off" class="form-control form-control-sm"/>
+            </div>
+            
+            <div class="md-form mt-3 mb-3">
+				<h6>Perfil Investidor:</h6>
+				<h:inputText  id="PerfilInvestidor" value="#{ativoBean.ativo.perfilInvestidor}" autocomplete="off" class="form-control form-control-sm"/>
+            </div>
+            
+            <div class="md-form mt-3 mb-3">
+				<h6>Capital Mínimo Inicial:</h6>
+				<h:inputText  id="CapitalMinimoInicial" value="#{ativoBean.ativo.capitalMinimoInicial}" autocomplete="off" class="form-control form-control-sm"/>
+            </div>
+            
+            <div class="md-form mt-3 mb-3">
+				<h6>Saque Mínimo:</h6>
+				<h:inputText  id="SaqueMinimo" value="#{ativoBean.ativo.saqueMinimo}" autocomplete="off" class="form-control form-control-sm"/>
+            </div>
+            
+			<h:panelGrid columns="2" class="mt-5 float-right">
+				<h:commandButton value="Salvar" action="#{ativoBean.salva(ativoBean.ativo)}" styleClass="btn btn-primary pl-5 pr-5"/>
+				<h:button value="Voltar" outcome="index" styleClass="btn btn-secondary pl-5 pr-5"/>
+			</h:panelGrid>
+		</h:form>
+		
+		
+	</div>
+</h:body>
 
 </html>
