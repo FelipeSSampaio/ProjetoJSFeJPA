@@ -1,5 +1,5 @@
 # ProjetoJSFeJPA
-Projeto básico que utiliza Maven, JSF e JPA
+Projeto básico que utiliza Maven, JSF, JPA e BootStrap.
 
 ----------------------
 PASSOS NECESSÁRIOS
