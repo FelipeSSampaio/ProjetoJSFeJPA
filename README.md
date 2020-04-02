@@ -1,5 +1,7 @@
 # ProjetoJSFeJPA
-Projeto básico que utiliza Maven, JSF e JPA
+Projeto básico que utiliza Maven, JSF, JPA e BootStrap.
+
+Nesse projeto mantenho algumas classes com JDBC para que fique claro a diferença de esforço entre o mesmo e a utilização da Java Persistence API (JPA)
 
 ----------------------
 PASSOS NECESSÁRIOS
@@ -27,7 +29,9 @@ A construção do banco está definida em 'hibernate.hbm2ddl.auto' com update, o
 
 3 - Página inicial da aplicação
 
-http://localhost:8080/Investimentos/cadastraAtivo.xhtml
+http://localhost:8080/Investimentos/
+
+Será apresentada a tela inicial definida no web.xml, no caso defini o index.xhtml.
 
 ----------------------
 POSSÍVEIS PROBLEMAS
