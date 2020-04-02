@@ -9,43 +9,43 @@
 
 	<div class="container mt-5">
 		<blockquote class="blockquote mb-0">
-		  <h4 class="p-3 mb-2 bg-primary text-white">Cadastro de ativos</h4>
+		  <h4 class="p-3 mb-2 bg-primary text-white">Edição de ativo</h4>
 		</blockquote>
 		
 		<h:form class="bg-white p-4">
 			<div class="md-form mt-3 mb-3">
 				<label for="NomeAtivo">Nome do Ativo</label>
-				<h:inputText id="NomeAtivo" value="#{ativoBean.ativo.nome}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o nome do ativo"/>
+				<h:inputText id="NomeAtivo" value="#{ativo.nome}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o nome do ativo"/>
 				<h:message for="NomeAtivo" styleClass="text-danger"/>
             </div>
             
             <div class="md-form mt-3 mb-3">
 				<label for="TipoAtivo">Tipo do Ativo</label>
-				<h:inputText id="TipoAtivo" value="#{ativoBean.ativo.tipo}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o tipo do ativo"/>
+				<h:inputText id="TipoAtivo" value="#{ativo.tipo}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o tipo do ativo"/>
 				<h:message for="TipoAtivo" styleClass="text-danger"/>
             </div>
             
             <div class="md-form mt-3 mb-3">
 				<label for="PerfilInvestidor">Perfil do Investidor</label>
-				<h:inputText id="PerfilInvestidor" value="#{ativoBean.ativo.perfilInvestidor}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o perfil do investidor"/>
-            	<h:message for="PerfilInvestidor" styleClass="text-danger"/>
+				<h:inputText id="PerfilInvestidor" value="#{ativo.perfilInvestidor}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o perfil do investidor"/>
+				<h:message for="PerfilInvestidor" styleClass="text-danger"/>
             </div>
             
             <div class="md-form mt-3 mb-3">
 				<label for="PerfilInvestidor">Capital Mínimo Inicial</label>
-				<h:inputText id="CapitalMinimoInicial" value="#{ativoBean.ativo.capitalMinimoInicial}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o capital mínimo inicial"/>
+				<h:inputText id="CapitalMinimoInicial" value="#{ativo.capitalMinimoInicial}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o capital mínimo inicial"/>
 				<h:message for="CapitalMinimoInicial" styleClass="text-danger"/>
             </div>
             
             <div class="md-form mt-3 mb-3">
 				<label for="PerfilInvestidor">Saque Mínimo</label>
-				<h:inputText id="SaqueMinimo" value="#{ativoBean.ativo.saqueMinimo}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o saque mínimo"/>
+				<h:inputText id="SaqueMinimo" value="#{ativo.saqueMinimo}" autocomplete="off" class="form-control form-control-sm" required="true" requiredMessage="Informe o saque mínimo"/>
 				<h:message for="SaqueMinimo" styleClass="text-danger"/>
             </div>
             
 			<h:panelGrid columns="2" class="mt-5 float-right">
-				<h:commandButton value="Salvar" action="#{ativoBean.salva(ativoBean.ativo)}" styleClass="btn btn-primary pl-5 pr-5"/>
-				<h:button value="Voltar" outcome="index" styleClass="btn btn-secondary pl-5 pr-5"/>
+				<h:commandButton value="Salvar" action="#{ativoBean.edita(ativo)}" styleClass="btn btn-primary pl-5 pr-5"/>
+				<h:button value="Voltar" outcome="listaAtivo" styleClass="btn btn-secondary pl-5 pr-5"/>
 			</h:panelGrid>
 		</h:form>
 		

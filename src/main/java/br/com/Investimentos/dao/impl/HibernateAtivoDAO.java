@@ -29,6 +29,29 @@ public class HibernateAtivoDAO extends DBConnection implements AtivoDAO {
 		return ativos;
 	}
 
+	public Ativo buscaAtivo(Long id) {
+		EntityManager em = abreConexao();
+		return em.find(Ativo.class, id);		
+	}
+	
+	public void edita(Ativo ativo) {
+		EntityManager em = abreConexao();
+		em.getTransaction().begin();
+		
+		Ativo ativoPersistido = em.find(Ativo.class, ativo.getId());
+		
+		ativoPersistido.setNome(ativo.getNome());
+		ativoPersistido.setTipo(ativo.getTipo());
+		ativoPersistido.setPerfilInvestidor(ativo.getPerfilInvestidor());
+		ativoPersistido.setCapitalMinimoInicial(ativo.getCapitalMinimoInicial());
+		ativoPersistido.setSaqueMinimo(ativo.getSaqueMinimo());
+		
+		em.merge(ativoPersistido);
+		
+		em.getTransaction().commit();
+		em.close();
+	}
+	
 	public void remove(Ativo ativo) {
 		EntityManager em = abreConexao();
 		em.getTransaction().begin();

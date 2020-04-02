@@ -49,6 +49,9 @@
 					</h:column>
 					<h:column class="p-2">
 						<f:facet name="header">Ações</f:facet>
+						<h:commandButton value="Edita" action="#{ativoBean.redirecionaEdita()}" styleClass="btn btn-warning mr-3 text-white">
+							<f:param name="ativoId" value="#{ativo.id}"/>
+						</h:commandButton>
 						<h:commandLink action="#{ativoBean.exclui(ativo)}" styleClass="btn btn-danger">
 							Excluir
 						</h:commandLink>
