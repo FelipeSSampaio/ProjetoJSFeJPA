@@ -17,7 +17,9 @@ Para download do Postgres: https://www.enterprisedb.com/downloads/postgres-postg
 
 Caso não queira utilizar o Postgres, basta alterar as seguintes propriedades no persistence.xml:
 
+```
 "javax.persistence.jdbc.driver" e "hibernate.dialect"
+```
 
 Além de lembrar de colocar o 'user' e 'password' de acordo com o utilizado no banco.
 
