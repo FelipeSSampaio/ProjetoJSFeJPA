@@ -1,5 +1,10 @@
 # ProjetoJSFeJPA
-Projeto básico que utiliza Maven, JSF, JPA e BootStrap.
+Projeto básico que utiliza:
+
+- [X] Maven
+- [X] JSF
+- [X] JPA
+- [X] BootStrap
 
 Nesse projeto mantenho algumas classes com JDBC para que fique claro a diferença de esforço entre o mesmo e a utilização da Java Persistence API (JPA)
 
